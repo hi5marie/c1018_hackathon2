@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 var responseData;
 
 function initializeApp() {
-    console.log('Initializing App...');
+    // console.log('Initializing App...');
     getDataFromServer();
     
 
@@ -17,13 +17,13 @@ function initializeApp() {
 }
 
 function getDataFromServer() {
-    console.log('hi');
+    // console.log('hi');
     var settings = {
         url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=fb2158f8324ad535f0c817ef2fb98040',
         dataType: 'json',
         method: 'get',
         success: function(response) {
-            console.log(response);
+            // console.log(response);
             responseData = response.results;
             fillMovieInformation(responseData);
             getActorInformation(responseData);
@@ -37,24 +37,24 @@ function getDataFromServer() {
 function fillMovieInformation(movieArray) {
 
     $('.movieTitle').text(movieArray[0].title);
-    console.log($('.movieTitle').text());
+    // console.log($('.movieTitle').text());
     $('.movieDescription').text(movieArray[0].overview);
-    console.log($('.movieDescription').text());
+    // console.log($('.movieDescription').text());
 
 
 }
 
 function getActorInformation(movieArray) {
-    console.log('getactor', movieArray);
+    // console.log('getactor', movieArray);
     var movieId = movieArray[0].id;
-    console.log(movieId);
+    // console.log(movieId);
 
     var settings = {
         url: `http://api.themoviedb.org/3/movie/${movieId}/credits?api_key=fb2158f8324ad535f0c817ef2fb98040`,
         dataType: 'json',
         method: 'get',
         success: function(response) {
-            console.log('getActorSuccess', response);
+            // console.log('getActorSuccess', response);
             getActorPictures(response.cast);
             
         },
@@ -70,7 +70,7 @@ function getActorInformation(movieArray) {
 }
 
 function getActorPictures(movieArray) {
-    console.log('movieArray', movieArray);
+    // console.log('movieArray', movieArray);
     var actorId = movieArray[0].id;
 
     var settings = {
@@ -78,7 +78,7 @@ function getActorPictures(movieArray) {
         dataType: 'json',
         method: 'get',
         success: function(response) {
-            console.log('actorImages', response);
+            // console.log('actorImages', response);
 
             var image = $('<img>', {
                 class: 'actorImage',
@@ -120,7 +120,7 @@ function getActorPictures(movieArray) {
             
         },
         error: function(response){
-            console.log('error');
+            // console.log('error');
         }
     }
 
