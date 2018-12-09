@@ -27,13 +27,11 @@ body{
     height: 15%;
     width: 100%;
     display: block;
-
 }
 
 .mainContainer{
     height: 85%;
     width: 100%;
-    background-color: black;
 }
 
 
@@ -178,18 +176,26 @@ body{
     width: 100%;
 }
 
+.boxDiv{
+    font-size: 20px;
+    height: 55%;
+    width: 20%;
+    border: 1px solid red;
+    display: inline-flex;
+}
+
 .testDiv{
     font-size: 20px;
     height: 100%;
     width: 100%;
 
 }
-.boxTitle, .details{
+
+details{
     border: 1px solid aqua;
     color: white;
     font-size: 20px;
     width: 10%;
-    text-align: center;
 }
 
 .poster{
