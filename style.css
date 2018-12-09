@@ -184,12 +184,12 @@ body{
     width: 100%;
 
 }
-.boxTitle{
-    border: 1px solid red;
+.boxTitle, .details{
+    border: 1px solid aqua;
     color: white;
     font-size: 20px;
     width: 10%;
-
+    text-align: center;
 }
 
 .poster{

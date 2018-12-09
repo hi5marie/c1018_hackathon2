@@ -33,6 +33,7 @@ class MoviePosterService {
     }
     renderAllMoviePosters(response) {
         var resultsArray = response['results'];
+console.log('Results:', resultsArray);
 
         for (var indexResult = 0; indexResult < resultsArray.length; indexResult++) {
             var movie = resultsArray[indexResult];
@@ -62,7 +63,7 @@ class MoviePosterService {
         var poster = movie.poster_path;
         // var this = this;
 
-        console.log('buildMoviePoster title:', title);
+        // console.log('buildMoviePoster title:', title);
 
         handleModalShow = handleModalShow.bind(this);
 
@@ -86,7 +87,12 @@ class MoviePosterService {
             click: handleModalShow
         });
 
-        $(".testDiv").append(boxTitle, image);
+        var details= $("<div>",{
+            'class': 'details',
+            'text': 'Rating: '+ ratings
+        });
+
+        $(".testDiv").append(boxTitle, image, details);
 
         function handleModalShow() {
             
