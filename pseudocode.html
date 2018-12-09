@@ -1,6 +1,6 @@
 
 
-TOP MOVIE FINDER + RESTAURANT
+TOP MOVIE FINDER
 
 1) The page with top 10 movies listed
     a) TMDB API
@@ -8,3 +8,39 @@ TOP MOVIE FINDER + RESTAURANT
 2) Page with the locations of the movie you selected with links to purchase tickets
     a)input coordinates or zip code to give results clo
 3) 
+
+
+map game plan
+
+--ajax call back for theatres in a given location
+    geolocation
+    
+
+--ajax call back for showtimes
+    -pass in location from geolocation
+    -pass in movieID
+    -pass in current time:time_from
+    -pass in midnight of the next day:time_to
+
+--create theatre markers - maybe need google places
+
+    Loop through response.showtimes array
+        conditional to target objects with the correct movie_id
+            showtimes=showtimes[obj w/ movie_id].start_at
+            theatre name=showtimes[obj w/ movie_id].cinema_id //find out how to turn into cinema info 
+            showtimes[obj w/ movie_id].
+            showtimes[obj w/ movie_id].booking_link
+    -theatre name
+    -picture of theatre
+    -theatre website
+    -theatre phone number
+    -theatre address
+    -playing movie title ul
+    -showtimes as li's
+
+    -is_imax
+    -is_3d
+
+--add a loading animation for map
+--input field:location
+    
