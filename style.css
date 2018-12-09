@@ -184,6 +184,14 @@ body{
     width: 100%;
 
 }
+.boxTitle{
+    border: 1px solid red;
+    color: white;
+    font-size: 20px;
+    width: 10%;
+
+}
+
 .poster{
     height: 35%;
     width: 10%;

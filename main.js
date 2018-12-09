@@ -12,7 +12,7 @@ function initializeApp() {
     var modal = $('.modalPageContainer');
     
     $(".close-modal").click((event)=>{
-        console.log(event);
+        // console.log(event);
         if($(event.target).hasClass("close-modal")) {
             $(".youtubeIframe").attr('src','');
             $(".modalFooter").empty();

@@ -1,7 +1,7 @@
 $(document).ready(init);
 
 function init() {
-    console.log('init called')
+    // console.log('init called')
     let moviePosterService = new MoviePosterService;
     moviePosterService.getMoviePosters();
 }
@@ -17,34 +17,30 @@ class MoviePosterService {
     }
 
     getMoviePosters() {
-        console.log('get movie posters')
+        // console.log('get movie posters');
         var ajaxOptionsGetPoster = {
             url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=fb2158f8324ad535f0c817ef2fb98040',
             dataType: 'json',
             success: (response) => {
-                console.log('test', response);
+                // console.log('test', response);
                 this.renderAllMoviePosters(response);
             },
             error: function () {
-                console.log('errror')
+                // console.log('errror')
             }
         };
-
-
-
         $.ajax(ajaxOptionsGetPoster);
     }
-
     renderAllMoviePosters(response) {
-        
-        console.log('test');
         var resultsArray = response['results'];
-        console.log('resultsArray', resultsArray);
 
         for (var indexResult = 0; indexResult < resultsArray.length; indexResult++) {
             var movie = resultsArray[indexResult];
             this.buildMoviePoster(movie);
+
         }
+
+
     }
 
     fillMovieInformation (title, description) {
@@ -65,9 +61,15 @@ class MoviePosterService {
         var description = movie.overview;
         var poster = movie.poster_path;
         // var this = this;
-        
+
+        console.log('buildMoviePoster title:', title);
 
         handleModalShow = handleModalShow.bind(this);
+
+        var boxTitle = $("<div>",{
+            'class': 'boxTitle',
+            'text': title
+        });
 
         var image = $("<div>", {
             class: 'poster',
@@ -84,12 +86,11 @@ class MoviePosterService {
             click: handleModalShow
         });
 
-        $(".testDiv").append(image);
+        $(".testDiv").append(boxTitle, image);
 
         function handleModalShow() {
             
             console.log('handleModalShow...');
-            
 
             var movieInfo = {
                 title,
@@ -103,7 +104,7 @@ class MoviePosterService {
             this.getActorInformation (movieId);
             getVideos (title);
             $(".modalPageContainer").css('display', 'block');
-            
+
         }
         
     }
