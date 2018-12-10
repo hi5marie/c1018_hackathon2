@@ -40,7 +40,7 @@ class Map {
     initMap() {
         // var location;
         this.map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: -34.397, lng: 150.644 },
+            center: { lat: 33.684566, lng: -117.82650 },
             zoom: 13
         });
         console.log('1', this.map)
@@ -113,26 +113,27 @@ class Map {
         });
         console.log('tiw', this.theaterInfoWindow)
         console.log('00',status)
+        debugger;
         google.maps.event.addListener(this.marker, 'click', this.handleTheaterMarkerClicked(request,place));
     }
     handleTheaterMarkerClicked(request,place) {
         this.service.getDetails(request,this.checkPlaceServiceStatus(place, status) )
     }
     checkPlaceServiceStatus(place) {
-        console.log('01',status)
+        console.log('01',place)
         var name = place.name;
         var addressStringArray = place.vicinity.split(",");
         var address1 = addressStringArray[0];
         var city = addressStringArray[1];
-        // $('.google-maps').on("click", ".yelp-transition", function () {
-        //     goToYelp(name, address1, city)
-        // });
+        $('.google-maps').on("click", ".yelp-transition", function () {
+            goToYelp(name, address1, city)
+        });
         // if (status == google.maps.places.PlacesServiceStatus.OK) {
-            var contentStr = '<h3>' + place.name + '</h3><p>' + place.vicinity;
+            var contentStr = '<h3>' + name + '</h3><p>' + place.vicinity;
             if (!!place.formatted_phone_number) contentStr += '<br>' + place.formatted_phone_number;
             if (!!place.website) contentStr += '<br><a target="_blank" href="' + place.website + '">' + place.website + '</a>';
             contentStr += '<br>' + '</p>';
-            // contentStr += '<p><a class="yelp-transition">Get YELP details</a></p>';
+            contentStr += '<p><a class="yelp-transition">Get YELP details</a></p>';
             this.theaterInfoWindow.setContent(contentStr);
             // if (this.lastWindow) {
             //     this.lastWindow.close()
