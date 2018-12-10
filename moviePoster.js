@@ -67,10 +67,10 @@ console.log('Results:', resultsArray);
 
         handleModalShow = handleModalShow.bind(this);
 
-        var boxTitle = $("<div>",{
-            'class': 'boxTitle',
-            'text': title
-        });
+        // var boxTitle = $("<div>",{
+        //     'class': 'boxTitle',
+        //     'text': title
+        // });
 
         var image = $("<div>", {
             class: 'poster',
@@ -92,7 +92,7 @@ console.log('Results:', resultsArray);
             'text': 'Rating: '+ ratings
         });
 
-        $(".testDiv").append(boxTitle, image, details);
+        $(".testDiv").append(image, details);
 
         function handleModalShow() {
             

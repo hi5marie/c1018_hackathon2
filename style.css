@@ -33,7 +33,6 @@ body{
 .mainContainer{
     height: 85%;
     width: 100%;
-    background-color: black;
 }
 
 
@@ -179,25 +178,34 @@ body{
 }
 
 .testDiv{
-    font-size: 20px;
     height: 100%;
     width: 100%;
+    display: inline-block;
 
 }
-.boxTitle, .details{
+
+boxTitle{
     border: 1px solid aqua;
     color: white;
-    font-size: 20px;
-    width: 10%;
+    height: 5%;
+    width: 25%;
     text-align: center;
 }
 
+.details{
+    border: 1px solid darkred;
+    color: white;
+    display: inline-block;
+
+}
+
 .poster{
-    height: 35%;
-    width: 10%;
+    height: 75%;
+    width: 25%;
     float: left;
     background-size: cover;
     background-position: center;
+    display: inline-block;
 }
 
 .poster:hover {
