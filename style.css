@@ -51,7 +51,7 @@
         height: 60px;
         width: 60px;
     }
-    instruction{
+    .instruction{
         height:35%;
         position:absolute;
         left:27%;
@@ -501,7 +501,7 @@
         height: 70px;
         width: 70px;
     }
-    instruction{
+    .instruction{
         height:35%;
         position:absolute;
         left:32%;
@@ -936,7 +936,7 @@
         height: 70px;
         width: 70px;
     }
-    instruction{
+    .instruction{
         height:35%;
         position:absolute;
         left:40%;
@@ -2236,14 +2236,19 @@
 
 
 .headContainer{
+    display: block;
     background-color: black;
-    width: 100%;
 }
 
 @media screen and (min-width: 1200px){
     div.headContainer{
-        display: block;
-        background-color: black;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    div.headContainer{
+        display: inline-block;
     }
 }
 
@@ -2259,17 +2264,17 @@
     }
 }
 
-@media only screen and (max-width: 1200px){
-    div.logoContainer{
-        display: inline-block;
-        position: relative;
-        border: 1px solid aqua;
+/*@media only screen and (max-width: 1200px){*/
+    /*div.logoContainer{*/
+        /*display: inline-block;*/
+        /*position: relative;*/
+        /*border: 1px solid aqua;*/
 
-        /*float: left;*/
-        /*margin: 10px 0 10px 5%;*/
-        /*margin: 15px 60px;*/
-    }
-}
+        /*!*float: left;*!*/
+        /*!*margin: 10px 0 10px 5%;*!*/
+        /*!*margin: 15px 60px;*!*/
+    /*}*/
+/*}*/
 
 logo {
     display: inline-block;
@@ -2296,7 +2301,7 @@ logo {
 }
 
 
-find{
+.find{
     position: relative;
     left: 5%;
     vertical-align: bottom;
@@ -2320,42 +2325,43 @@ find{
     }
 }
 
-@media screen and (max-width: 1200px){
-    div.find {
-        position: relative;
-        left: 5%;
-        vertical-align: bottom;
-        display: inline-block;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
-        color: white;
-        font-size: 4vw;
-        margin: 15px 0;
-    }
-}
+/*@media screen and (max-width: 1200px){*/
+    /*div.find {*/
+        /*position: relative;*/
+        /*left: 5%;*/
+        /*vertical-align: bottom;*/
+        /*display: inline-block;*/
+        /*font-family: 'Oswald', sans-serif;*/
+        /*font-weight: bold;*/
+        /*color: white;*/
+        /*font-size: 4vw;*/
+        /*margin: 15px 0;*/
+    /*}*/
+/*}*/
 
 
 
-.instruction{
-    display: inline-block;
-    color: white;
+/*.instruction{*/
+    /*display: inline-block;*/
+    /*color: white;*/
 
-}
-@media screen and (min-width: 1200px){
-    div.instruction {
-        position: absolute;
-        top: 3%;
-        display: inline-block;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
-        color: white;
-        font-size: 35px;
+/*}*/
+/*@media screen and (min-width: 1200px){*/
+    /*div.instruction {*/
+        /*position: absolute;*/
+        /*top: 3%;*/
+        /*display: inline-block;*/
+        /*font-family: 'Oswald', sans-serif;*/
+        /*font-weight: bold;*/
+        /*color: white;*/
+        /*font-size: 35px;*/
 
-    }
-}
-@media screen and (max-width: 1200px){
-    div.instruction {
-        border: 1px solid lime;
-        font-size: 20px;
-    }
-}
+    /*}*/
+/*}*/
+
+/*@media screen and (max-width: 1200px){*/
+    /*div.instruction {*/
+        /*border: 1px solid lime;*/
+        /*font-size: 20px;*/
+    /*}*/
+/*}*/
